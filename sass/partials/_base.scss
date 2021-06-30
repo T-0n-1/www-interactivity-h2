@@ -1,3 +1,15 @@
+@mixin flexLAyout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin textStyles($ttrf: uppercase) {
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: $ttrf;  
+}
+
 * {
     margin: 0;
     padding: 0;
