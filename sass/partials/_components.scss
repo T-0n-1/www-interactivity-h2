@@ -26,6 +26,7 @@
     font-size: 50px;
     color: $color-secondary;
     @include textStyles(none);
+    text-shadow: 3px 2px $color-dark;
 }
 
 .sub-name {
@@ -40,6 +41,7 @@
     font-weight: 300;
     color: $color-primary;
     margin-bottom: 40px;
+    text-shadow: 3px 2px $color-secondary;
 }
 
 .sub-heading {
