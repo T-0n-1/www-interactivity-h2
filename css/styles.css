@@ -1,7 +1,27 @@
-.logo {
+.logo, .card-overlay {
   display: flex;
   justify-content: center;
   align-items: center; }
+
+.main-name, .main-heading {
+  font-family: "Marck Script", cursive;
+  text-align: center; }
+
+.sub-name, .sub-heading {
+  font-family: Roboto, sans-serif;
+  color: #ccc;
+  text-align: center; }
+
+.card-img, .card-overlay {
+  height: 100%;
+  width: 100%; }
+
+.card-overlay-heading, .card-overlay-paragraph {
+  font-family: Raleway, sans-serif;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  text-align: center; }
 
 * {
   margin: 0;
@@ -62,6 +82,13 @@ body {
         font-size: 30px;
         color: #d8ae53; }
 
+.gallery {
+  margin-top: 20px; }
+
+.cards-wrapper {
+  display: flex;
+  flex-wrap: wrap; }
+
 .logo {
   font-size: 70px;
   color: #d8ae53;
@@ -70,15 +97,6 @@ body {
   text-decoration: none;
   border: 4px solid #d8ae53;
   border-radius: 50%; }
-
-.main-name, .main-heading {
-  font-family: "Marck Script", cursive;
-  text-align: center; }
-
-.sub-name, .sub-heading {
-  font-family: Roboto, sans-serif;
-  color: #ccc;
-  text-align: center; }
 
 .main-name {
   font-size: 50px;
@@ -124,5 +142,48 @@ body {
   .main-button:hover {
     background-color: #d8ae53;
     color: #303030; }
+
+.card {
+  width: 33.3333%;
+  height: 33vw;
+  overflow: hidden;
+  position: relative; }
+  .card:hover .card-overlay {
+    left: 0; }
+  .card-img {
+    object-fit: cover; }
+  .card-overlay {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: -100%;
+    background-color: rgba(216, 174, 83, 0.6);
+    color: #fff;
+    flex-direction: column;
+    transition: left 0.5s; }
+    .card-overlay-btn {
+      width: 150px;
+      height: 40px;
+      margin-top: 10px;
+      color: #d8ae53;
+      background-color: #fff;
+      font-family: Raleway, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: 1px solid #d8ae53;
+      border-radius: 20px;
+      outline: none;
+      cursor: pointer;
+      transition: all 0.5s; }
+      .card-overlay-btn:hover {
+        background-color: #d8ae53;
+        color: #fff;
+        box-shadow: 1px 1px rgba(255, 255, 255, 0.5); }
+    .card-overlay-heading {
+      font-size: 50px; }
+    .card-overlay-paragraph {
+      font-size: 30px; }
 
 /*# sourceMappingURL=styles.css.map */
