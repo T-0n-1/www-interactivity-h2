@@ -6,12 +6,12 @@
     position: relative;
 
     .brand {
-        position: absolute;
-        top: 15%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: $color-white;
+        @include centering(15%);
         display: flex;
         align-items: center;
+    }
+
+    &-banner {
+        @include centering;
     }
 }

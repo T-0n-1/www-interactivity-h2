@@ -1,7 +1,14 @@
-@mixin flexLAyout {
+%flexLayout {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@mixin centering($yPosition: 50%) {
+  position: absolute;
+  top: $yPosition;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @mixin textStyles($ttrf: uppercase) {
