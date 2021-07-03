@@ -23,6 +23,10 @@
   text-transform: capitalize;
   text-align: center; }
 
+.navbar-navigation-left, .navbar-navigation-right {
+  width: 50vw;
+  height: 100vh; }
+
 * {
   margin: 0;
   padding: 0; }
@@ -118,6 +122,16 @@ body {
     transition: color 0.5s; }
     .social-media-link:hover {
       color: #d8ae53; }
+
+.left-img {
+  width: 300px; }
+
+.navbar-navigation {
+  display: flex; }
+  .navbar-navigation-left {
+    background-color: #303030; }
+  .navbar-navigation-right {
+    background-color: #232323; }
 
 .logo {
   font-size: 70px;

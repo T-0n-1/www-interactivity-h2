@@ -61,7 +61,7 @@
                 color: $color-primary;
             }
         }
-    } 
+    }
 }
 
 .gallery {
@@ -96,7 +96,7 @@
     display: flex;
     width: 300px;
     justify-content: space-between;
-    margin-bottom: 70px;    
+    margin-bottom: 70px;
 
     &-item {
         list-style: none;
@@ -107,9 +107,29 @@
         font-size: 50px;
         color: $color-secondary;
         transition: color 0.5s;
-        
+
         &:hover {
             color: $color-primary;
+        }
+    }
+}
+
+.left-img {
+    width: 300px;
+}
+
+.navbar {
+    &-navigation {
+        display: flex;
+
+        &-left {
+            @extend %navbarSides;
+            background-color: $color-dark;
+        }
+
+        &-right {
+            @extend %navbarSides;
+            background-color: darken($color-dark, 5%);
         }
     }
 
