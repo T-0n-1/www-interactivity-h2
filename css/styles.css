@@ -1,4 +1,4 @@
-.footer, .navbar-navigation-right, .logo, .card-overlay {
+.navbar-navigation-right, .footer, .logo, .card-overlay {
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -12,7 +12,7 @@
   color: #ccc;
   text-align: center; }
 
-.card-img, .card-overlay, .hamburger-menu .menu {
+.hamburger-menu .menu, .card-img, .card-overlay {
   height: 100%;
   width: 100%; }
 
@@ -34,6 +34,70 @@
 
 body {
   background-color: #303030; }
+
+.navbar {
+  position: relative;
+  z-index: 25; }
+  .navbar-navigation {
+    display: flex; }
+    .navbar-navigation-left {
+      background-color: #303030;
+      left: -50vw;
+      transition: left 0.7s ease-in-out; }
+      .navbar-navigation-left .left-img {
+        width: 50%;
+        position: absolute;
+        border-radius: 15px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+        opacity: 0.8; }
+        .navbar-navigation-left .left-img-1 {
+          top: 15%;
+          left: 15%; }
+        .navbar-navigation-left .left-img-2 {
+          top: 35%;
+          left: 25%; }
+        .navbar-navigation-left .left-img-3 {
+          top: 55%;
+          left: 35%; }
+    .navbar-navigation-right {
+      background-color: #232323;
+      right: -50vw;
+      transition: right 0.7s ease-in-out; }
+    .navbar-navigation .nav-list-item {
+      list-style: none; }
+    .navbar-navigation .nav-list-link {
+      font-family: "Marck Script", cursive;
+      font-size: 50px;
+      font-weight: 300;
+      letter-spacing: 2px;
+      text-transform: capitalize;
+      color: #ccc;
+      text-decoration: none;
+      display: block;
+      margin: 20px;
+      text-align: center;
+      transition: all 0.7s; }
+      .navbar-navigation .nav-list-link:hover {
+        color: #ccc;
+        letter-spacing: 5px; }
+
+.checkbox:checked ~ .navbar-navigation .navbar-navigation-left {
+  left: 0; }
+
+.checkbox:checked ~ .navbar-navigation .navbar-navigation-right {
+  right: 0; }
+
+.checkbox:checked ~ .hamburger-menu .menu {
+  transform: rotate(90deg); }
+
+.checkbox:checked ~ .hamburger-menu .menu-line-1 {
+  transform: rotate(-40deg); }
+
+.checkbox:checked ~ .hamburger-menu .menu-line-2 {
+  opacity: 0; }
+
+.checkbox:checked ~ .hamburger-menu .menu-line-3 {
+  transform: rotate(40deg); }
 
 .header {
   width: 100%;
@@ -124,69 +188,28 @@ body {
     .social-media-link:hover {
       color: #d8ae53; }
 
-.navbar {
-  position: relative;
-  z-index: 25; }
-  .navbar-navigation {
-    display: flex; }
-    .navbar-navigation-left {
-      background-color: #303030;
-      left: -50vw;
-      transition: left 0.7s ease-in-out; }
-      .navbar-navigation-left .left-img {
-        width: 50%;
-        position: absolute;
-        border-radius: 15px;
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
-        opacity: 0.8; }
-        .navbar-navigation-left .left-img-1 {
-          top: 15%;
-          left: 15%; }
-        .navbar-navigation-left .left-img-2 {
-          top: 35%;
-          left: 25%; }
-        .navbar-navigation-left .left-img-3 {
-          top: 55%;
-          left: 35%; }
-    .navbar-navigation-right {
-      background-color: #232323;
-      right: -50vw;
-      transition: right 0.7s ease-in-out; }
-    .navbar-navigation .nav-list-item {
-      list-style: none; }
-    .navbar-navigation .nav-list-link {
-      font-family: "Marck Script", cursive;
-      font-size: 50px;
-      font-weight: 300;
-      letter-spacing: 2px;
-      text-transform: capitalize;
-      color: #ccc;
-      text-decoration: none;
-      display: block;
-      margin: 20px;
-      text-align: center;
-      transition: all 0.7s; }
-      .navbar-navigation .nav-list-link:hover {
-        color: #ccc;
-        letter-spacing: 5px; }
+.checkbox {
+  display: none; }
 
-.checkbox:checked ~ .navbar-navigation .navbar-navigation-left {
-  left: 0; }
-
-.checkbox:checked ~ .navbar-navigation .navbar-navigation-right {
-  right: 0; }
-
-.checkbox:checked ~ .hamburger-menu .menu {
-  transform: rotate(90deg); }
-
-.checkbox:checked ~ .hamburger-menu .menu-line-1 {
-  transform: rotate(-40deg); }
-
-.checkbox:checked ~ .hamburger-menu .menu-line-2 {
-  opacity: 0; }
-
-.checkbox:checked ~ .hamburger-menu .menu-line-3 {
-  transform: rotate(40deg); }
+.hamburger-menu {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  z-index: 50;
+  top: 5%;
+  right: 5%; }
+  .hamburger-menu .menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    cursor: pointer;
+    transition: transform 0.5s; }
+    .hamburger-menu .menu-line {
+      width: 100%;
+      height: 3px;
+      background-color: #d8ae53;
+      transform-origin: right;
+      transition: all 0.5s 0.5s; }
 
 .logo {
   font-size: 70px;
@@ -284,28 +307,5 @@ body {
       font-size: 50px; }
     .card-overlay-paragraph {
       font-size: 30px; }
-
-.checkbox {
-  display: none; }
-
-.hamburger-menu {
-  width: 40px;
-  height: 40px;
-  position: fixed;
-  z-index: 50;
-  top: 5%;
-  right: 5%; }
-  .hamburger-menu .menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    cursor: pointer;
-    transition: transform 0.5s; }
-    .hamburger-menu .menu-line {
-      width: 100%;
-      height: 3px;
-      background-color: #d8ae53;
-      transform-origin: right;
-      transition: all 0.5s 0.5s; }
 
 /*# sourceMappingURL=styles.css.map */

@@ -3,5 +3,9 @@
 
 /*! Own JavaScript code */
 $( document ).ready(function() {
-    
+
+    $(".nav-list-item").click(function(){
+        $("#check").prop("checked", false);
+    });
+
 });
