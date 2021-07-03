@@ -121,3 +121,33 @@
         }
     }
 }
+
+.checkbox {
+    display: none;
+}
+
+.hamburger-menu {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    z-index: 50;
+    top: 5%;
+    right: 5%;
+
+    .menu {
+        @extend %sizeFull;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        cursor: pointer;
+        transition: transform 0.5s;
+
+        &-line {
+            width: 100%;
+            height: 3px;
+            background-color: $color-primary;
+            transform-origin: right;
+            transition: all 0.5s 0.5s;
+        }
+    }
+}
