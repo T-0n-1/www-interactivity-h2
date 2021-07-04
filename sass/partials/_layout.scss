@@ -14,14 +14,18 @@
 
             .left-img {
                 width: 50%;
+                @include mediaBuilder(1340px){width: 70%;}
                 position: absolute;
                 border-radius: 15px;
                 box-shadow: 0 15px 40px rgba($color-black, 0.5);
                 opacity: 0.8;
                 
                 @include imgBuilder(1, 15%, 15%);
+                @include mediaBuilder(1340px){@include imgBuilder(1, 10%, 5%)}
                 @include imgBuilder(2, 35%, 25%);
+                @include mediaBuilder(1340px){@include imgBuilder(2, 30%, 12%)}
                 @include imgBuilder(3, 55%, 35%);
+                @include mediaBuilder(1340px){@include imgBuilder(3, 50%, 19%)}
             }
         }
 
