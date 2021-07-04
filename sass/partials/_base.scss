@@ -18,6 +18,12 @@
   }
 }
 
+@mixin mediaBuilder($maxPixels) {
+  @media (max-width: #{$maxPixels}) { 
+    @content 
+  }
+}
+
 %flexLayout {
   display: flex;
   justify-content: center;
@@ -50,6 +56,21 @@
   width: 50vw;
   height: 100vh;
   position: fixed;
+}
+
+@keyframes moveBG {
+  0% {
+    background-position-x: center;
+    background-position-y: 0%;
+  }
+  50% {
+    background-position-x: 3%;
+    background-position-y: 1%;
+  }
+  100% {
+    background-position-x: center;
+    background-position-y: 0%;
+  } 
 }
 
 * {

@@ -9,8 +9,9 @@
             @extend %navbarSides;
             background-color: $color-dark;
             left: -50vw;
+            @include mediaBuilder(790px){display: none;}
             transition: left 0.7s ease-in-out;
-            
+
             .left-img {
                 width: 50%;
                 position: absolute;
@@ -22,7 +23,6 @@
                 @include imgBuilder(2, 35%, 25%);
                 @include imgBuilder(3, 55%, 35%);
             }
-
         }
 
         &-right {
@@ -30,12 +30,25 @@
             background-color: darken($color-dark, 5%);
             right: -50vw;
             @extend %flexLayout;
+            @include mediaBuilder(790px) {
+                width: 100vw;
+                right: -100vw;
+                background: image-url("nav-img-2.jpg");
+                background-size: 120% 120%;
+                animation: moveBG 7s ease-in-out 0s infinite;
+            }
             transition: right 0.7s ease-in-out;
         }
 
         .nav-list {
             &-item {
                 list-style: none;
+
+                @include mediaBuilder(790px) {
+                    background-color: rgba($color-dark, 0.05);
+                    border: none;
+                    border-radius: 30%;
+                }
             }
             
             &-link {
@@ -43,6 +56,7 @@
                 font-size: 50px;
                 @include textStyles(capitalize);
                 color: $color-secondary;
+                @include mediaBuilder(790px){color: $color-white;}
                 text-decoration: none;
                 display: block;
                 margin: 20px;
@@ -52,6 +66,9 @@
                 &:hover {
                     color: $color-secondary;
                     letter-spacing: 5px;
+                    @include mediaBuilder(790px){
+                        color: $color-primary;
+                    }
                 }
             }
         }
@@ -99,6 +116,10 @@
     height: 100vh;
     display: flex;
     align-items: center;
+    
+    @include mediaBuilder(790px){
+        background: image-url("about-image.png") no-repeat fixed center;
+    }
 
     &-left {
         width: 40%;
@@ -107,8 +128,11 @@
         img {
             width: 100%;
         }
+    @include mediaBuilder(790px){display: none;}
     }
 
+   
+    
     &-right {
         width: 60%;
         display: flex;
@@ -116,6 +140,14 @@
         align-items: center;
         padding: 0 100px;
         box-sizing: border-box;
+        
+        @include mediaBuilder(790px) {
+            background-color: rgba($color-dark, 0.5);
+            width: 100vw;
+            height: 100vh;
+            padding: 40px 50px;
+            justify-content: space-around;
+        }
 
         .stars {
             margin: 30px 0;
@@ -127,12 +159,15 @@
             margin-left: 15px;
         }
 
+
         .description {
             font-family: $font-Roboto;
             font-size: 20px;
             font-style: italic;
             color: $color-secondary;
             text-align: justify;
+
+            @include mediaBuilder(920px){font-size: 16px;}
 
             &::first-letter {
                 padding-left: 30px;
@@ -168,6 +203,8 @@
         font-size: 18px;
         color: $color-secondary;
         @include textStyles(capitalize);
+
+        @include mediaBuilder(790px){font-size: 12px;}
     }
 }
 
